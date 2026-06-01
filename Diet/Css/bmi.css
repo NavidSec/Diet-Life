@@ -1,0 +1,341 @@
+ /* استایل‌های اختصاصی و دو ستونه صفحه BMI (bmi.html) */
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&family=Poppins:wght@600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+/* پس‌زمینه کل سایت طبق درخواست شما قرمز است */
+body {
+    /* background-color: #ff0000;  */
+    min-height: 100vh;
+}
+
+/* استایل هدر و منوی بالای صفحه */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: #f3f3f3;
+    height: 60px; /* ارتفاع ثابت برای کنترل دقیق فضا */
+}
+
+/* اصلاح باکس لوگو برای قرارگیری متن در سمت چپ عکس */
+.logo-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* تراز عمودی دقیق عکس و متن */
+    gap: 12px; /* ایجاد فاصله مناسب بین عکس لوگو و متن نام برند */
+}
+
+.logo-container .logo {
+    height: 50px;
+    display: block;
+    border-radius: 50%;
+}
+
+/* استایل اسم درشت سایت کنار لوگو */
+.brand-name {
+    font-family: 'Poppins', sans-serif; /* استفاده از فونت انگلیسی شیک */
+    font-size: 1.8rem; /* ابعاد درشت و واضح */
+    font-weight: 700; /* کاملا ضخیم و بولد */
+    color: #1a8758; /* رنگ سبز هماهنگ با تم سایت */
+    letter-spacing: 0.5px;
+}
+
+/* استایل منو و قرارگیری دقیق آن در وسط هدر */
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.15rem;
+    transition: color 0.3s;
+}
+
+.nav-menu ul li a:hover, .nav-menu ul li a.active {
+    color: #55b38a;
+}
+
+/* ایجاد فضای نامرئی هم‌اندازه با لوگو در سمت چپ برای هل دادن منو به وسط */
+.header-spacer {
+    flex: 1;
+}
+
+
+.bmi-page-section {
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    background: linear-gradient(135deg, #e5f1ec 0%, #c7e0da 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.bmi-two-column-wrapper {
+    display: flex;
+    flex-direction: row; 
+    gap: 30px;
+    width: 100%;
+    max-width: 1100px;
+    align-items: stretch; 
+}
+
+/* کانتینر ستون فرم */
+.bmi-page-container {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+    text-align: right;
+}
+
+.bmi-header-badge {
+    display: inline-block;
+    background-color: rgba(85, 179, 138, 0.15);
+    color: #439671;
+    padding: 5px 14px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.bmi-page-container h2 {
+    color: #111111;
+    font-size: 1.7rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.bmi-page-container .subtitle {
+    color: #666666;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* انتخاب جنسیت */
+.gender-selection {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.gender-selection .gender-box {
+    flex: 1;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    padding: 12px 25px;
+    border: 2px solid #eef2f5;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: #fdfdfd;
+    transition: all 0.3s ease;
+}
+
+.gender-selection .gender-box .gender-custom-icon {
+    width: 45px !important;
+    height: 45px !important;
+    object-fit: contain !important;
+    margin-bottom: 0 !important;
+}
+
+.gender-box:hover .gender-custom-icon {
+    transform: scale(1.08);
+}
+
+.gender-box span {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #555;
+}
+
+.gender-box.active {
+    border-color: #55b38a;
+    background-color: rgba(85, 179, 138, 0.08);
+}
+
+.gender-box.active span {
+    color: #439671;
+}
+
+.gender-box.active .gender-custom-icon {
+    filter: drop-shadow(0 2px 5px rgba(85, 179, 138, 0.3));
+}
+
+/* اینپوت‌های فرم */
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.bmi-form .form-group {
+    margin-bottom: 18px;
+}
+
+.bmi-form label {
+    display: block;
+    font-weight: bold;
+    color: #444444;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+}
+
+.bmi-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #eef2f5;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    background-color: #fcfdfe;
+    transition: all 0.3s ease;
+}
+
+.bmi-form input:focus {
+    border-color: #55b38a;
+    box-shadow: 0 4px 12px rgba(85, 179, 138, 0.1);
+}
+
+.btn-green-glow {
+    background-color: #55b38a;
+    color: #ffffff;
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(85, 179, 138, 0.25);
+    transition: all 0.3s ease;
+}
+
+.btn-green-glow:hover {
+    background-color: #439671;
+    transform: translateY(-1px);
+}
+
+/* ستون سمت چپ (باکس نتیجه) */
+.page-result-box {
+    flex: 1;
+    background: #ffffff;
+    border: 1px solid #eef2f5;
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start;
+    gap: 20px;
+    animation: fadeInRightPage 0.4s ease;
+}
+
+@keyframes fadeInRightPage {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.result-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f6f8fa;
+    padding-bottom: 12px;
+    margin-bottom: 5px;
+}
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+/* کلاس‌های رنگی وضعیت BMI */
+.bg-underweight { background-color: #3498db !important; }
+.bg-normal { background-color: #2ecc71 !important; }
+.bg-overweight { background-color: #e67e22 !important; }
+.bg-obese { background-color: #e74c3c !important; }
+
+/* اصلاح دایره برای سایز بزرگتر */
+.bmi-circle {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: #f8fafc;
+    border: 8px solid #55b38a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    transition: border-color 0.4s ease;
+}
+
+.bmi-circle span {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #2c3e50;
+}
+
+.bmi-circle small {
+    font-size: 0.75rem;
+    color: #7f8c8d;
+}
+
+.result-metrics-text {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.result-metrics-text p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.result-advice {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* دکمه بازگشت */
+.result-actions {
+    width: 100%;
+    margin-top: auto;
+}

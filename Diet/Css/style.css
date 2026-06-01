@@ -1,0 +1,208 @@
+/* تعریف فونت پیش‌فرض و راست‌چین کردن کل صفحه */
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&family=Poppins:wght@600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+/* پس‌زمینه کل سایت طبق درخواست شما قرمز است */
+body {
+    /* background-color: #ff0000;  */
+    min-height: 100vh;
+}
+
+/* استایل هدر و منوی بالای صفحه */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: #f3f3f3;
+    height: 60px; /* ارتفاع ثابت برای کنترل دقیق فضا */
+}
+
+/* اصلاح باکس لوگو برای قرارگیری متن در سمت چپ عکس */
+.logo-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* تراز عمودی دقیق عکس و متن */
+    gap: 12px; /* ایجاد فاصله مناسب بین عکس لوگو و متن نام برند */
+}
+
+.logo-container .logo {
+    height: 50px;
+    display: block;
+    border-radius: 50%;
+}
+
+/* استایل اسم درشت سایت کنار لوگو */
+.brand-name {
+    font-family: 'Poppins', sans-serif; /* استفاده از فونت انگلیسی شیک */
+    font-size: 1.8rem; /* ابعاد درشت و واضح */
+    font-weight: 700; /* کاملا ضخیم و بولد */
+    color: #1a8758; /* رنگ سبز هماهنگ با تم سایت */
+    letter-spacing: 0.5px;
+}
+
+/* استایل منو و قرارگیری دقیق آن در وسط هدر */
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.15rem;
+    transition: color 0.3s;
+}
+
+.nav-menu ul li a:hover, .nav-menu ul li a.active {
+    color: #55b38a;
+}
+
+/* ایجاد فضای نامرئی هم‌اندازه با لوگو در سمت چپ برای هل دادن منو به وسط */
+.header-spacer {
+    flex: 1;
+}
+
+/* استایل بخش هیرو */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 30px); 
+    background-color: #ffffff; 
+    
+    background-image: url('../image/hero.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row-reverse; 
+}
+
+/* هدایت متن‌ها به سمت چپ تصویر */
+.hero-content {
+    max-width: 50%; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    text-align: right; 
+    padding-right: 130px;
+    padding-top: 100px;
+}
+
+.sub-title {
+    color: #55b38a;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.main-title {
+    font-size: 2.3rem;
+    color: #111111;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.main-title .highlight {
+    display: block;
+    color: #55b38a;
+}
+
+.description {
+    color: #555555;
+    font-size: 1rem;
+    line-height: 1.8;
+    padding-right: 40px;
+    margin-bottom: 35px;
+}
+
+/* دکمه‌ها */
+.cta-buttons {
+    display: flex;
+    gap: 50px;
+    padding-right: 70px;
+}
+
+.btn {
+    padding: 12px 35px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-black {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.btn-black:hover {
+    background-color: #222222;
+    transform: translateY(-2px);
+}
+
+.btn-green {
+    background-color: #55b38a;
+    color: #ffffff;
+}
+
+.btn-green:hover {
+    background-color: #439671;
+    transform: translateY(-2px);
+}
+
+/* واکنش‌گرایی برای موبایل */
+@media (max-width: 992px) {
+    .main-header {
+        flex-direction: column;
+        height: auto;
+        gap: 15px;
+        padding: 15px;
+    }
+    .logo-container, .header-spacer {
+        flex: none;
+    }
+    .hero-section {
+        background-position: 75% center;
+    }
+    .container {
+        flex-direction: row;
+    }
+    .hero-content {
+        max-width: 90%;
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 0.85); 
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .main-title {
+        font-size: 2rem;
+    }
+}
