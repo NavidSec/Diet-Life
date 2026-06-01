@@ -56,7 +56,3 @@ The diet system and BMI calculator are implemented using vanilla JavaScript logi
 - User profiles
 - API integration
 - Food database
-
-## License
-
-MIT
