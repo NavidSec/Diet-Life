@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<link rel="icon"
+type="image/x-icon"
+href="/favicon.ico">
+
+<title>
+سیستم رژیم غذایی | Dietalife
+</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap"
+rel="stylesheet">
+
+<!--link to header css-->
+<link rel="stylesheet" href="Css/header.css">
+<!--link to css-->
+<link rel="stylesheet" href="Css/diet.css">
+
+
+</head>
+
+<body>
+
+<header class="main-header">
+
+<div class="logo-container">
+
+<img src="image/logo.png"
+alt="لوگو Dietalife"
+class="logo">
+
+<span class="brand-name">
+
+Dietalife
+
+</span>
+
+</div>
+
+<nav class="nav-menu">
+
+<ul>
+
+<li>
+
+<a href="index.html">
+
+صفحه اصلی
+
+</a>
+
+</li>
+<li>
+  <a href="bmi.html">
+    محاسبه BMI
+  </a>
+</li>
+<li>
+
+<a href="diet.html"
+class="active">
+
+تولید رژیم و ارزیابی
+
+</a>
+
+</li>
+
+<li>
+
+<a href="medical-encyclopedia.html">
+
+دانشنامه پزشکی
+
+</a>
+
+</li>
+
+<li>
+
+<a href="medical-emergencies.html">
+
+فوریت های پزشکی
+
+</a>
+
+</li>
+
+</ul>
+
+</nav>
+
+<div class="header-spacer"></div>
+
+</header>
+
+<section class="hero-section">
+
+<div class="diet-container">
+
+<div class="top-box">
+
+<div class="top-image"></div>
+
+<div class="top-content">
+
+<div class="hero-badge">
+
+سیستم هوشمند تحلیل سلامت و رژیم غذایی
+
+</div>
+
+<h1>
+
+سیستم رژیم غذایی هوشمند
+
+</h1>
+
+<p>
+
+اطلاعات خود را وارد کنید تا بر اساس شرایط بدنی،
+سن، جنسیت و وضعیت سلامتی،
+رژیم غذایی مناسب و تحلیل BMI دریافت کنید.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="form-grid">
+
+<div class="form-group">
+
+<label for="age">
+
+گروه سنی
+
+</label>
+
+<select id="age">
+
+<option value="12-17">
+۱۲ تا ۱۷ سال
+</option>
+
+<option value="18-30">
+۱۸ تا ۳۰ سال
+</option>
+
+<option value="31-50">
+۳۱ تا ۵۰ سال
+</option>
+
+<option value="51-65">
+۵۱ تا ۶۵ سال
+</option>
+
+<option value="66+">
+بالای ۶۶ سال
+</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label for="disease">
+
+بیماری
+
+</label>
+
+<select id="disease">
+
+<option value="healthy">
+سلامت (بدون بیماری)
+</option>
+
+<option value="diabetes">
+دیابت
+</option>
+
+<option value="highcholesterol">
+چربی خون
+</option>
+
+<option value="hypertension">
+فشار خون
+</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label for="gender">
+
+جنسیت
+
+</label>
+
+<select id="gender">
+
+<option value="male">
+مرد
+</option>
+
+<option value="female">
+زن
+</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label for="weight">
+
+وزن (کیلوگرم)
+
+</label>
+
+<input type="number"
+id="weight"
+placeholder="مثلا 72">
+
+</div>
+
+<div class="form-group">
+
+<label for="height">
+
+قد (سانتی‌متر)
+
+</label>
+
+<input type="number"
+id="height"
+placeholder="مثلا 175">
+
+</div>
+
+</div>
+
+<button
+class="diet-btn"
+onclick="generateDiet()">
+
+تحلیل سلامت و دریافت رژیم غذایی
+
+</button>
+
+<div id="result"></div>
+
+
+</div>
+
+</section>
+
+<footer>
+
+تمام حقوق این پروژه متعلق به Dietalife می‌باشد.
+
+</footer>
+
+<script src="Js/diet-data.js"></script>
+<script src="Js/diet-engine.js"></script>
+
+
+</body>
+
+</html>

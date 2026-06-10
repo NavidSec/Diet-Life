@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<link rel="icon"
+type="image/x-icon"
+href="/favicon.ico">
+
+<title>
+Dietalife | محاسبه پیشرفته BMI
+</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap"
+rel="stylesheet">
+<!--link to header css-->
+<link rel="stylesheet" href="Css/header.css">
+<link rel="stylesheet" href="Css/bmi.css">
+
+<!--<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Vazirmatn',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:
+linear-gradient(rgba(245,255,252,0.93),
+rgba(245,255,252,0.95)),
+url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1600&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+overflow-x:hidden;
+color:#1d3557;
+min-height:100vh;
+}
+
+/* ================= BMI SECTION ================= */
+
+.bmi-page-section{
+
+min-height:100vh;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+padding:110px 18px 40px;
+}
+
+.bmi-two-column-wrapper{
+
+width:100%;
+max-width:1050px;
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(320px,1fr));
+
+gap:20px;
+}
+
+.bmi-page-container,
+.page-result-box{
+
+background:rgba(255,255,255,0.84);
+
+backdrop-filter:blur(10px);
+
+padding:28px;
+
+border-radius:26px;
+
+box-shadow:
+0 10px 35px rgba(0,0,0,0.07);
+}
+
+.bmi-header-badge{
+
+display:inline-block;
+
+padding:8px 15px;
+
+border-radius:30px;
+
+background:#e6fffa;
+
+color:#00a67e;
+
+font-size:0.8rem;
+
+margin-bottom:16px;
+
+font-weight:700;
+}
+
+.bmi-page-container h2{
+
+font-size:1.9rem;
+
+margin-bottom:10px;
+
+color:#00a67e;
+
+line-height:1.6;
+}
+
+.subtitle{
+
+line-height:2;
+color:#5b6977;
+margin-bottom:24px;
+font-size:0.92rem;
+}
+
+/* ================= GENDER ================= */
+
+.gender-selection{
+
+display:flex;
+gap:14px;
+margin-bottom:24px;
+}
+
+.gender-box{
+
+flex:1;
+
+background:#f8fffc;
+
+border:2px solid transparent;
+
+border-radius:18px;
+
+padding:16px 12px;
+
+text-align:center;
+
+cursor:pointer;
+
+transition:0.3s;
+
+user-select:none;
+}
+
+.gender-box:hover{
+
+transform:translateY(-2px);
+}
+
+.gender-box.active{
+
+border-color:#00a67e;
+background:#ecfffa;
+box-shadow:0 8px 20px rgba(0,184,148,0.12);
+}
+
+.gender-custom-icon{
+
+width:52px;
+height:52px;
+
+object-fit:contain;
+
+margin-bottom:8px;
+}
+
+.gender-box span{
+
+display:block;
+
+font-size:0.92rem;
+font-weight:700;
+color:#355070;
+}
+
+/* ================= FORM ================= */
+
+.form-row{
+
+display:grid;
+
+grid-template-columns:
+repeat(2,minmax(0,1fr));
+
+gap:16px;
+}
+
+.form-group{
+
+margin-bottom:18px;
+
+display:flex;
+flex-direction:column;
+}
+
+.form-group label{
+
+margin-bottom:8px;
+
+font-weight:700;
+
+font-size:0.9rem;
+
+color:#355070;
+}
+
+.form-group input{
+
+padding:14px;
+
+border-radius:14px;
+
+border:1px solid #d7e3e0;
+
+background:#f9fffd;
+
+font-size:14px;
+
+outline:none;
+
+transition:0.3s;
+}
+
+.form-group input:focus{
+
+border-color:#00a67e;
+background:white;
+box-shadow:0 0 0 4px rgba(0,184,148,0.08);
+}
+
+/* ================= BUTTON ================= */
+
+.btn-green-glow{
+
+width:100%;
+
+border:none;
+
+padding:15px;
+
+border-radius:16px;
+
+background:
+linear-gradient(to left,#00b894,#00cec9);
+
+color:white;
+
+font-size:15px;
+
+cursor:pointer;
+
+transition:0.3s;
+
+font-weight:700;
+
+margin-top:5px;
+}
+
+.btn-green-glow:hover{
+
+transform:translateY(-2px);
+opacity:0.94;
+}
+
+/* ================= RESULT ================= */
+
+.page-result-box{
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.result-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:24px;
+
+gap:10px;
+}
+
+.result-header h3{
+
+color:#00a67e;
+font-size:1.1rem;
+}
+
+.status-badge{
+
+padding:8px 14px;
+
+border-radius:30px;
+
+background:#ecfffa;
+
+color:#00a67e;
+
+font-size:0.8rem;
+
+font-weight:700;
+}
+
+.bmi-circle{
+
+width:165px;
+height:165px;
+
+border-radius:50%;
+
+margin:15px auto;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+justify-content:center;
+
+background:
+linear-gradient(to left,#00b894,#00cec9);
+
+color:white;
+
+box-shadow:
+0 8px 24px rgba(0,0,0,0.12);
+}
+
+.bmi-circle span{
+
+font-size:2.8rem;
+font-weight:700;
+}
+
+.bmi-circle small{
+
+font-size:0.88rem;
+}
+
+.result-metrics-text{
+
+margin-top:20px;
+}
+
+.result-metrics-text p{
+
+line-height:2.1;
+
+color:#4b6475;
+
+font-size:0.94rem;
+}
+
+.result-advice{
+
+margin-top:10px;
+}
+
+.result-actions{
+
+margin-top:10px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+.main-header{
+
+flex-direction:column;
+
+gap:12px;
+
+padding:14px 15px;
+}
+
+.nav-menu ul{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:12px;
+}
+
+.nav-menu a{
+
+font-size:0.85rem;
+}
+
+.bmi-page-section{
+
+padding-top:165px;
+}
+
+.bmi-page-container,
+.page-result-box{
+
+padding:22px;
+}
+
+.bmi-page-container h2{
+
+font-size:1.5rem;
+}
+
+}
+
+@media(max-width:600px){
+
+.bmi-two-column-wrapper{
+
+grid-template-columns:1fr;
+}
+
+.form-row{
+
+grid-template-columns:1fr;
+}
+
+.gender-selection{
+
+flex-direction:row;
+}
+
+.gender-box{
+
+padding:14px 10px;
+}
+
+.gender-custom-icon{
+
+width:44px;
+height:44px;
+}
+
+.bmi-circle{
+
+width:145px;
+height:145px;
+}
+
+.bmi-circle span{
+
+font-size:2.3rem;
+}
+
+.logo{
+
+width:36px;
+height:36px;
+}
+
+.brand-name{
+
+font-size:1rem;
+}
+
+.subtitle{
+
+font-size:0.88rem;
+line-height:1.9;
+}
+
+}
+
+</style>
+-->
+
+</head>
+
+<body>
+
+<header class="main-header">
+
+<div class="logo-container">
+
+<img src="image/logo.png"
+alt="لوگو رژیم آنلاین"
+class="logo">
+
+<span class="brand-name">
+
+Dietalife
+
+</span>
+
+</div>
+
+<nav class="nav-menu">
+
+<ul>
+
+<li>
+
+<a href="index.html">
+
+صفحه اصلی
+
+</a>
+
+</li>
+<li>
+  <a href="bmi.html" class="active">
+    محاسبه BMI
+  </a>
+</li>
+<li>
+
+<a href="diet.html">
+
+تولید رژیم و ارزیابی
+
+</a>
+
+</li>
+
+<li>
+
+<a href="medical-encyclopedia.html">
+
+دانشنامه پزشکی
+
+</a>
+
+</li>
+
+<li>
+
+<a href="medical-emergencies.html">
+
+فوریت های پزشکی
+
+</a>
+
+</li>
+
+</ul>
+
+</nav>
+
+<div class="header-spacer"></div>
+
+</header>
+
+<section class="bmi-page-section">
+
+<div class="bmi-two-column-wrapper">
+
+<div class="bmi-page-container">
+
+<div class="bmi-header-badge">
+
+هوشمند و دقیق
+
+</div>
+
+<h2>
+
+آنالیز شاخص توده بدنی (BMI)
+
+</h2>
+
+<p class="subtitle">
+
+مشخصات بدنی خود را وارد کنید
+تا پروفایل سلامت شما به صورت هوشمند ارزیابی شود.
+
+</p>
+
+<div class="bmi-form">
+
+<div class="gender-selection">
+
+<label class="gender-box active"
+data-gender="male">
+
+<img src="image/man.png"
+alt="آقا"
+class="gender-custom-icon">
+
+<span>
+آقا
+</span>
+
+</label>
+
+<label class="gender-box"
+data-gender="female">
+
+<img src="image/woman.png"
+alt="خانم"
+class="gender-custom-icon">
+
+<span>
+خانم
+</span>
+
+</label>
+
+</div>
+
+<div class="form-row">
+
+<div class="form-group">
+
+<label for="page-weight">
+
+وزن (کیلوگرم)
+
+</label>
+
+<input type="number"
+id="page-weight"
+placeholder="مثلاً 75"
+min="20"
+max="300">
+
+</div>
+
+<div class="form-group">
+
+<label for="page-height">
+
+قد (سانتی‌متر)
+
+</label>
+
+<input type="number"
+id="page-height"
+placeholder="مثلاً 175"
+min="50"
+max="250">
+
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label for="page-age">
+
+سن (سال)
+
+</label>
+
+<input type="number"
+id="page-age"
+placeholder="مثلاً 26"
+min="1"
+max="120">
+
+</div>
+
+<button id="btn-page-calculate"
+class="btn-green-glow">
+
+محاسبه و ارزیابی هوشمند
+
+</button>
+
+</div>
+
+</div>
+
+<div id="page-bmi-result"
+class="page-result-box"
+style="display:none;">
+
+<div class="result-header">
+
+<h3>
+
+گزارش تحلیلی Dietalife
+
+</h3>
+
+<div id="bmi-badge-status"
+class="status-badge">
+
+وضعیت
+
+</div>
+
+</div>
+
+<div class="bmi-circle"
+id="bmi-circle-main">
+
+<span id="page-bmi-value">
+
+0
+
+</span>
+
+<small>
+
+شاخص BMI
+
+</small>
+
+</div>
+
+<div class="result-metrics-text">
+
+<p>
+
+<strong>
+وضعیت بدنی:
+</strong>
+
+<span id="page-bmi-status"></span>
+
+</p>
+
+<p id="page-bmi-advice"
+class="result-advice">
+
+</p>
+
+</div>
+
+<div class="result-actions">
+
+<a href="/index.html"
+class="btn-green-glow"
+style="text-decoration:none; display:block; text-align:center; margin-top:20px;">
+
+بازگشت به خانه
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+const genderBoxes = document.querySelectorAll('.gender-box');
+
+genderBoxes.forEach(box => {
+
+box.addEventListener('click', () => {
+
+genderBoxes.forEach(item => {
+item.classList.remove('active');
+});
+
+box.classList.add('active');
+
+});
+
+});
+
+</script>
+
+<script src="Js/bmi.js"></script>
+
+<script src="Js/diet-engine.js"></script>
+
+</body>
+
+</html>

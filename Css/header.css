@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Vazirmatn:wght@300;400;700&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+header {
+  position: -webkit-sticky; /* سازگاری با مرورگرهای قدیمی‌تر سافاری */
+  position: sticky;
+  top: 0;                   /* چسبیدن به بالاترین نقطه صفحه */
+  z-index: 1000;            /* قرار گرفتن روی سایر المان‌های صفحه */
+  background-color: #ffffff; /* حتماً پس‌زمینه تعیین کنید تا محتوای زیر آن دیده نشود */
+}
+.main-header, .main-header * {
+  font-family: 'Vazirmatn', sans-serif,'Poppins';
+}
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background-color: #f3f3f3;
+  height: 60px; /* ارتفاع ثابت برای کنترل دقیق فضا */
+}
+
+/* اصلاح باکس لوگو برای قرارگیری متن در سمت چپ عکس */
+.logo-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; /* تراز عمودی دقیق عکس و متن */
+  gap: 12px; /* ایجاد فاصله مناسب بین عکس لوگو و متن نام برند */
+}
+
+.logo-container .logo {
+  height: 50px;
+  display: block;
+  border-radius: 50%;
+}
+
+/* استایل اسم درشت سایت کنار لوگو */
+.brand-name {
+  font-family: 'Poppins', sans-serif; /* استفاده از فونت انگلیسی شیک */
+  font-size: 1.8rem; /* ابعاد درشت و واضح */
+  font-weight: 700; /* کاملا ضخیم و بولد */
+  color: #1a8758; /* رنگ سبز هماهنگ با تم سایت */
+  letter-spacing: 0.5px;
+}
+
+
+/* استایل منو و قرارگیری دقیق آن در وسط هدر */
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+}
+.nav-menu ul li {
+  display: flex ;
+  align-items: center ;
+  height: 100% ;
+}
+
+.nav-menu ul li a {
+  text-decoration: none ;
+  color: #333 ;
+  font-weight: 700 ;
+  font-size: 1.2rem ;
+  font-family: 'Vazirmatn';
+  transition: color 0.3s ease ;
+  position: relative ; 
+  display: flex ;
+  align-items: center ;
+  height: 100% ; 
+  padding: 0 4px;
+}
+.nav-menu ul li a:hover,
+.nav-menu ul li a.active {
+  color:  #55b38a; /* تغییر رنگ متن به سبز برای جذابیت بیشتر */
+}
+
+.nav-menu ul li a::after {
+  content: ''; /* یک المان مجازی خالی ایجاد می‌کند */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; /* در حالت عادی عرض خط صفر است، پس دیده نمی‌شود */
+  background-color:  #55b38a;
+  height: 3px; /* ضخامت خط */
+  border-radius: 10px 10px 0 0; /* کمی گرد کردن لبه‌های خط */
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* انیمیشن حرکتی بسیار نرم */
+}
+
+/* وقتی موس روی لینک می‌رود (hover) یا لینک کلاس active دارد */
+.nav-menu ul li a:hover::after,
+.nav-menu ul li .active::after {
+  width: 100%; /* عرض خط از 0 به 100٪ می‌رسد و به آرامی باز می‌شود */
+}
+/* ایجاد فضای نامرئی هم‌اندازه با لوگو در سمت چپ برای هل دادن منو به وسط */
+.header-spacer {
+  flex: 1;
+}
