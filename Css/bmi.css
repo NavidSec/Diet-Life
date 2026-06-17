@@ -1,0 +1,344 @@
+ /* استایل‌های اختصاصی و دو ستونه صفحه BMI (bmi.html) */
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&family=Poppins:wght@600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+/* پس‌زمینه کل سایت طبق درخواست شما قرمز است */
+body {
+    /* background-color: #ff0000;  */
+    min-height: 100vh;
+     background: url('../image/meter.webp') no-repeat center center;
+  
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  
+  overflow-x:hidden;
+  color:#1f2937;
+  }
+
+
+
+
+
+.bmi-page-section {
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    /* background: linear-gradient(135deg, #e5f1ec 0%, #c7e0da 100%); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.bmi-two-column-wrapper {
+    display: flex;
+    flex-direction: row; 
+    gap: 30px;
+    width: 100%;
+    max-width: 1100px;
+    align-items: stretch; 
+}
+
+/* کانتینر ستون فرم */
+.bmi-page-container {
+    flex: 1;
+    /* background: rgba(255, 255, 255, 0.9); */
+      background:rgba(255,255,255,0.85);
+  
+  backdrop-filter:blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+    text-align: right;
+}
+
+.bmi-header-badge {
+    display: inline-block;
+    background-color: rgba(85, 179, 138, 0.15);
+    color: #439671;
+    padding: 5px 14px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.bmi-page-container h2 {
+    color: #111111;
+    font-size: 1.7rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.bmi-page-container .subtitle {
+    color: #666666;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* انتخاب جنسیت */
+.gender-selection {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.gender-selection .gender-box {
+    flex: 1;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    padding: 12px 25px;
+    border: 2px solid #eef2f5;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: #fdfdfd;
+    transition: all 0.3s ease;
+}
+
+.gender-selection .gender-box .gender-custom-icon {
+    width: 45px !important;
+    height: 45px !important;
+    object-fit: contain !important;
+    margin-bottom: 0 !important;
+}
+
+.gender-box:hover .gender-custom-icon {
+    transform: scale(1.08);
+}
+
+.gender-box span {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #555;
+}
+
+.gender-box.active {
+    border-color: #55b38a;
+    background-color: rgba(85, 179, 138, 0.08);
+}
+
+.gender-box.active span {
+    color: #439671;
+}
+
+.gender-box.active .gender-custom-icon {
+    filter: drop-shadow(0 2px 5px rgba(85, 179, 138, 0.3));
+}
+
+/* اینپوت‌های فرم */
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.bmi-form .form-group {
+    margin-bottom: 18px;
+}
+
+.bmi-form label {
+    display: block;
+    font-weight: bold;
+    color: #444444;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+}
+
+.bmi-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #eef2f5;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    background-color: #fcfdfe;
+    transition: all 0.3s ease;
+}
+
+.bmi-form input:focus {
+    border-color: #55b38a;
+    box-shadow: 0 4px 12px rgba(85, 179, 138, 0.1);
+}
+
+.btn-green-glow {
+    background-color: #55b38a;
+    color: #ffffff;
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(85, 179, 138, 0.25);
+    transition: all 0.3s ease;
+}
+
+.btn-green-glow:hover {
+    background-color: #439671;
+    transform: translateY(-1px);
+}
+
+/* ستون سمت چپ (باکس نتیجه) */
+.page-result-box {
+    flex: 1;
+    background: #ffffff;
+    border: 1px solid #eef2f5;
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start;
+    gap: 20px;
+    animation: fadeInRightPage 0.4s ease;
+}
+
+@keyframes fadeInRightPage {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.result-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f6f8fa;
+    padding-bottom: 12px;
+    margin-bottom: 5px;
+}
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+/* کلاس‌های رنگی وضعیت BMI */
+.bg-underweight { background-color: #3498db !important; }
+.bg-normal { background-color: #2ecc71 !important; }
+.bg-overweight { background-color: #e67e22 !important; }
+.bg-obese { background-color: #e74c3c !important; }
+
+/* اصلاح دایره برای سایز بزرگتر */
+.bmi-circle {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: #f8fafc;
+    border: 8px solid #55b38a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    transition: border-color 0.4s ease;
+}
+
+.bmi-circle span {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #2c3e50;
+}
+
+.bmi-circle small {
+    font-size: 0.75rem;
+    color: #7f8c8d;
+}
+
+.result-metrics-text {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.result-metrics-text p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.result-advice {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* دکمه بازگشت */
+.result-actions {
+    width: 100%;
+    margin-top: auto;
+}
+
+/* ==========================================================================
+   بخش ریسپانسیو اختصاصی: فرستادن باکس گزارش تحلیل به زیر باکس آنالیز در موبایل
+   ========================================================================== */
+
+   @media (max-width: 950px) {
+    /* ۱. تغییر چیدمان دو ستونه به ستونی (عمودی) */
+    .bmi-two-column-wrapper {
+      flex-direction: column !important; /* تبدیل چیدمان افقی به عمودی */
+      gap: 25px !important; /* فاصله مناسب بین باکس فرم و باکس گزارش زیرین */
+      align-items: center !important;
+      width: 100% !important;
+    }
+  
+    /* ۲. فیت شدن باکس فرم با عرض صفحه گوشی */
+    .bmi-page-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 25px 20px !important; /* پدینگ بهینه برای داخل کادر فرم در موبایل */
+    }
+  
+    /* ۳. اصلاح باکس گزارش تحلیل برای قرارگیری بی‌نقص در زیر فرم */
+    .page-result-box {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 25px 20px !important;
+      animation: fadeInUpPage 0.4s ease !important; /* تغییر انیمیشن ورود از پایین به بالا */
+    }
+  
+    .gender-selection {
+      gap: 10px !important;
+    }
+    
+    .gender-selection .gender-box {
+      padding: 10px 15px !important; 
+      gap: 8px !important;
+    }
+  
+    .gender-selection .gender-box .gender-custom-icon {
+      width: 35px !important; /* مچ شدن اندازه آیکون‌ها */
+      height: 35px !important;
+    }
+  
+    .form-row {
+      flex-direction: column !important; /* زیر هم قرار گرفتن اینپوت‌های هم‌ردیف مثل قد و وزن */
+      gap: 0 !important;
+    }
+  }
+  
+  /* انیمیشن جدید و روان برای ورود باکس نتیجه از پایین به بالا در موبایل */
+  @keyframes fadeInUpPage {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+  }

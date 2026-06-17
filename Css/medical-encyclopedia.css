@@ -1,0 +1,616 @@
+/* ================= GENERAL STYLES ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Vazirmatn', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f5fffb; 
+  color: #1d3557;
+  overflow-x: hidden;
+  direction: rtl;
+}
+
+/* ================= 1. HERO SECTION (بخش بالایی و قلب) ================= */
+.hero-section {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 40px 7% 30px;
+  gap: 50px;
+  flex-wrap: nowrap;
+}
+
+.hero-text {
+  flex: 1.2; 
+  min-width: 320px;
+  margin-top: -38px;
+}
+
+
+.hero-text .sub-title {
+  display: inline-block;
+  background: #e6fffa;
+  color: #55b38a;
+  padding: 5px 14px;
+  border-radius: 30px;
+  font-size: 1.0rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.hero-text h1 {
+  font-size: 2.9rem;
+  color: #55b38a;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.hero-text p {
+  line-height: 2.4;
+  font-size: 1.05rem;
+  color: #355070;
+  text-align: justify;
+}
+
+
+.hero-image-box {
+  flex: 1.5;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image-box img {
+  width: 100%;
+  max-width:800px; 
+  height: auto;
+  object-fit: contain;
+  margin-top: -20px;
+  animation: floatAnimation 4s ease-in-out infinite; 
+  -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+  mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+}
+
+@keyframes floatAnimation {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ================= 2. SERVICES SECTION (کارت‌های چهارگانه) ================= */
+.services-container {
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+  padding: 60px 0 80px;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  color: #55b38a;
+  font-weight: 700;
+}
+
+.services-grid {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; 
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  flex: 1;
+  min-width: 240px;
+  max-width: 270px;
+  background: white;
+  border-radius: 25px;
+  padding: 25px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+}
+
+/* ایجاد هاله‌های رنگی اختصاصی زیر هر کارت بر اساس آیکون‌ها */
+.card-blue { box-shadow: 0 0 50px rgba(2, 120, 184, 0.5); }
+.card-green { box-shadow: 0 0 50px rgba(20, 208, 89, 0.54); }
+.card-purple { box-shadow: 0 0 50px rgba(114, 9, 183, 0.5);}
+.card-red { box-shadow: 0 0 50px rgba(186, 13, 53, 0.5); }
+
+.card-icon {
+  width: 98px;
+  height: 98px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-icon img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  color: #1d3557;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.service-card p {
+  line-height: 1.8;
+  color: #5c677d;
+  font-size: 0.88rem;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.card-btn {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.card-blue .card-btn { color: #0077b6; }
+.card-green .card-btn { color: #55b38a; }
+.card-purple .card-btn { color: #7209b7; }
+.card-red .card-btn { color: #ef476f; }
+
+
+.service-card.card-red h3{
+  color:#ef476f !important;
+}
+
+.service-card.card-green h3{
+  color:#55b38a;
+}
+.service-card.card-purple h3{
+  color:#7209b7;
+}
+.service-card.card-blue h3{
+  color:#0077b6;
+}
+
+
+/* ================= 3. INFO BANNER SECTION ================= */
+.info-banner-section {
+  width: 80%;
+  max-width: 1160px;
+  margin: 60px auto 80px;
+  background: linear-gradient(135deg, #4dd4ac, #00c9a7); 
+  border-radius: 35px;
+  padding: 60px;
+  color: white;
+  
+  position: relative; 
+  overflow: hidden; 
+  
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; 
+}
+
+.banner-content {
+  flex: 1;
+  max-width: 55%;   
+  text-align: right; 
+  z-index: 2;   
+       
+}
+
+.banner-content h2{
+  margin-bottom: 20px;
+  color: #a7e8cc;
+  text-align: center;
+  font-weight: 800;
+}
+
+.banner-content p{
+  margin-bottom: 20px;
+
+}
+.banner-badges-grid {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+  max-width: 500px;
+}
+
+.banner-mini-badge {
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  padding: 8px 14px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 200px;
+  max-width: 240px;
+  
+}
+
+.banner-mini-badge:last-child {
+  flex: 0 1 calc(50% - 15px); /* جلوگیری از کش آمدن بج سوم به کل عرض خط */
+  margin: 0 auto;             /* هل دادن و وسط‌چین کردن بج سوم در ردیف خودش */
+}
+.badge-text {
+  display: flex;
+  flex-direction: column; 
+  text-align: right;
+  gap: 2px;
+  flex: 1 1 calc(50% - 15px); 
+  min-width: 180px;
+}
+
+
+.badge-text strong {
+  display: block; 
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+
+.badge-text span {
+  display: block; 
+  font-size: 0.75rem;
+  opacity: 0.85;
+  color: #f8f8f8 ;
+
+}
+
+
+.banner-image-box {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 45%; 
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.banner-image-box img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover; 
+  object-position: bottom right; 
+  
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to left, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
+  
+  opacity: 0.95;
+}
+
+
+.banner-badges-grid {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.banner-mini-badge {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  padding: 8px 15px;
+  border-radius: 50px; 
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 200px;
+  max-width: 250px; 
+}
+
+
+.badge-icon {
+  width: 30px;  
+  height: 30px;
+  
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; 
+}
+
+.badge-icon img {
+  width: 100%;   
+  height: 100%;
+  border-radius: 100%;
+  object-fit: cover;
+}
+/* استایل باکس تفصیلی هم‌اندازه با باکس‌های بالای سایت */
+.medical-box-detail {
+  width: 90%;
+  max-width: 1160px; /* دقیقاً هم‌اندازه با بنر و باکس‌های استاندارد بالا */
+  margin: 40px auto;
+  background-color: #ffffff;
+  border-radius: 35px; /* هماهنگ با انحنای لبه‌های بنر بالا */
+  padding: 50px;
+  box-sizing: border-box;
+  direction: rtl;
+}
+
+.medical-section-container { 
+  width: 100%; 
+  display: block; 
+  margin-bottom: 100px;
+  margin-top: 100px;
+  scroll-margin-top: 100px !important;
+ }
+.box-content-block {
+    width: 80%;
+    max-width: 1160px;
+    margin: 20px auto;
+    background: #ffffff; 
+    padding: 20px 35px; 
+    border-radius: 25px;
+    border: 1px solid rgba(0,0,0,0.05); 
+    transition: 0.3s;
+    
+}
+
+/* --- 5. تنظیمات آکاردئون (مشترک) --- */
+.accordion-toggle { 
+  cursor: pointer; 
+  display: flex; 
+  justify-content: space-between; 
+  font-weight: 700; 
+  padding: 10px 0; }
+  
+  .box-content-answer { 
+    max-height: 0;              
+    overflow: hidden;           
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1); 
+    padding: 0 35px;            
+    opacity: 0;                 
+}
+
+.box-content-block.active .box-content-answer { 
+    max-height: 500px;          
+    padding: 15px 35px;         
+    opacity: 1;                 
+}
+
+/* چرخش نرم فلش */
+.arrow {
+    transition: transform 0.15s ease;
+    display: inline-block;
+}
+.box-content-block.active .arrow {
+    transform: rotate(180deg);
+}
+/* --- 3. تم رنگی فشار خون (قرمز) --- */
+.blood-pressure-box-theme { 
+  box-shadow: 0 0 50px rgba(186, 13, 53, 0.2); }
+.blood-pressure-box-theme .accordion-toggle { 
+  color: #ff829fd9; }
+
+.blood-pressure-box-theme .accordion-toggle:hover { 
+  color: #ef476f; }
+
+.blood-pressure-box-theme strong{
+  color: #ff829fd9;
+}
+
+.diabetes-box-theme { 
+
+ box-shadow: 0 0 50px rgba(20, 208, 89, 0.2); 
+
+}
+.diabetes-box-theme .accordion-toggle {
+   color: #7feabae6; }
+
+.diabetes-box-theme .accordion-toggle:hover {
+    color: #55b38a; }
+
+.medical-main-title {
+   width: 80%; 
+   max-width: 1160px; 
+   margin: 50px auto 25px;
+   font-size: 1.6rem;
+   padding-right: 15px; }
+.blood-pressure-title { 
+  color: #ef476f; 
+  border-right: 5px solid #ef476f; }
+.diabetes-title { 
+  color: #55b38a;
+   border-right: 5px solid #55b38a; }
+
+/* تیتر مخصوص دیابت */
+.diabetes-title { 
+  color: #55b38a !important; 
+  border-right: 5px solid #55b38a !important; 
+  margin: 0 auto 25px auto !important; 
+  font-size: 1.6rem !important; 
+  font-weight: 800 !important;
+  text-align: right !important;
+  padding-right: 15px !important;
+}
+.diabetes-box-theme strong{
+  color: #7feabae6;
+}
+/* تم اختصاصی بنفش برای سیستم ایمنی */
+.immunity-title { 
+  color: #0077b6 !important; 
+  border-right: 5px solid #0077b6 !important; 
+  margin: 50px auto 25px auto ;
+  font-size: 1.6rem !important; 
+  font-weight: 800 !important;
+  text-align: right !important;
+  padding-right: 15px !important;
+}
+
+.immunity-box-theme { 
+  border: 1px solid rgba(114, 9, 183, 0.18) !important; 
+  box-shadow: 0 0 50px rgba(2, 120, 184, 0.2) !important; 
+}
+
+.immunity-box-theme .accordion-toggle { 
+  color: #73c5f1d4 !important; }
+
+.immunity-box-theme .accordion-toggle:hover { 
+  color: #0077b6 !important; }
+  
+.immunity-box-theme strong{
+    color: #73c5f1d4;
+  }
+
+.mental-health-title { 
+  color: #7209b7 !important; 
+  border-right: 5px solid #7209b7 !important; 
+  margin: 50px auto 25px auto !important;
+  font-size: 1.6rem !important; 
+  font-weight: 800 !important;
+  text-align: right !important;
+  padding-right: 15px !important;
+}
+
+.mental-health-box-theme { 
+  border: 1px solid rgba(0, 119, 182, 0.18) !important; 
+  box-shadow: 0 0 50px rgba(114, 9, 183, 0.2) !important; 
+}
+
+.mental-health-box-theme .accordion-toggle { 
+  color: #b974e6d2 !important; }
+
+.mental-health-box-theme .accordion-toggle:hover { 
+  color: #7209b7 !important; }
+
+.mental-health-box-theme strong{
+  color: #b974e6d2;
+  }
+/* ================= 4. FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: white;
+  border-top: 1px solid #e6fffa;
+  color: #4f6d7a;
+  font-size: 0.95rem;
+}
+
+
+
+/* ================= 5. RESPONSIVE (واکنش‌گرایی موبایل و تبلت) ================= */
+@media (max-width: 992px) {
+  .hero-section {
+    flex-direction: column-reverse; 
+    text-align: center;
+    padding-top: 140px;
+    gap: 35px;
+  }
+  
+  .hero-text h1 {
+    font-size: 1.8rem !important; 
+    margin-bottom: 15px;
+  }
+
+  .hero-image-box img {
+    max-width: 350px;
+  }
+
+  /* ---- بنر اصلی ---- */
+  .info-banner-section {
+    flex-direction: column;
+    padding: 40px 20px 0px; 
+    text-align: center;
+    width: 95%;
+    overflow: hidden; 
+  }
+
+  .banner-content {
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .banner-content h2 {
+    text-align: center;
+  }
+
+  .banner-content p {
+    font-size: 0.92rem !important; 
+    line-height: 2; 
+    max-width: 90%; 
+    margin: 0 auto 20px; 
+    text-align: justify; 
+    text-align-last: center; 
+    opacity: 0.95;
+  }
+
+  .banner-badges-grid {
+    justify-content: center;
+    margin: 25px auto 0;
+  }
+
+
+  .banner-image-box {
+    position: relative;
+    width: calc(100% + 40px); 
+    margin-right: -20px;      
+    margin-left: -20px;       
+    margin-bottom: 0;         
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .banner-image-box img {
+    width: 100%;               
+    height: auto;
+    object-fit: cover;         
+    display: block;
+    opacity: 1;
+    
+    /* ماسک عمودی برای محو شدن نرم بالای عکس در پس‌زمینه */
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to top, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+  }
+}
+@media (max-width: 600px) {
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-text p {
+    font-size: 1.05rem;
+    line-height: 2.2;
+  }
+
+  .main-title {
+    font-size: 1.9rem;
+    margin-bottom: 40px;
+  }
+
+  .info-banner-section h2 {
+    font-size: 1.6rem;
+  }
+}

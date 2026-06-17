@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Vazirmatn:wght@300;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Vazirmatn', sans-serif;
+  scroll-behavior: smooth;
+}
+  
+body {
+  background:linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.45)), url('../image/bg5.png') no-repeat center center;
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  color: #1f2937;
+}
+  
+/* ================= HERO ================= */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px 80px;
+}
+  
+.diet-container {
+  width: 100%;
+  max-width: 1250px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  border-radius: 38px;
+  padding: 45px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+}
+  
+/* ================= TOP ================= */
+.top-box {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  margin-bottom: 45px;
+  flex-wrap: wrap;
+}
+  
+.top-image {
+  width: 300px;
+  height: 320px;
+  border-radius: 32px;
+  flex-shrink: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)), 
+              url('https://www.paziresh24.com/blog/wp-content/uploads/2020/12/9-min.jpg');
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+  
+.top-content {
+  flex: 1;
+  min-width: 300px;
+}
+  
+.hero-badge {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 30px;
+  background: #eafff7;
+  color: #55b38a;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+  
+.top-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #55b38a;
+}
+  
+.top-content p {
+  line-height: 2.3;
+  font-size: 1.05rem;
+  color: #4b6475;
+}
+  
+/* ================= FORM ================= */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+  
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+  
+.form-group label {
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #355070;
+}
+  
+.form-group select,
+.form-group input {
+  width: 100%;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid #dce8e5;
+  background: #f9fffd;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+  
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #55b38a;
+  background: white;
+}
+  
+.diet-btn {
+  width: 100%;
+  border: none;
+  padding: 18px;
+  border-radius: 20px;
+  background: linear-gradient(to left, #55b38a, #00cec9);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 20px;
+  box-shadow: 0 12px 30px rgba(0, 184, 148, 0.2);
+}
+  
+.diet-btn:hover {
+  transform: translateY(-4px);
+}
+  
+/* ================= RESULT GRID ================= */
+#result {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 22px;
+}
+  
+.result-card {
+  background: white;
+  border-radius: 26px;
+  padding: 25px;
+  border-top: 5px solid #55b38a;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  transition: 0.3s;
+}
+  
+.result-card:hover {
+  transform: translateY(-5px);
+}
+  
+.result-card h2,
+.result-card h3 {
+  text-align: center; 
+  margin-bottom: 18px;
+  color: #00a67e;
+}
+
+  .result-card h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.title-icon{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.result-card p {
+  line-height: 2.2;
+  margin-bottom: 12px;
+  color: #4b6475;
+}
+.goal-card p{
+    margin-top: 35px;
+    line-height: 2.3;
+}
+/* کلیدی‌ترین بخش: مجبور کردن کارت رژیم به پر کردن تمام عرض گرید (هم‌اندازه با ۳ باکس بالا) */
+.full-width-card {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+}
+.user-info-card {
+    text-align: center;
+}
+
+.user-info-card .info-row {
+    padding: 12px 0;
+    margin: 0;
+    color: #4b6475;
+    font-size: 1rem;
+}
+.user-info-card h2{
+    margin-bottom: 28px;
+}
+
+.user-info-card .info-row:not(:last-child) {
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.user-info-card strong {
+    color: #355070;
+}
+  
+.bmi-highlight {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #00a67e;
+  margin: 15px 0;
+}
+  
+/* ================= BMI DYNAMIC CIRCLE ================= */
+.bmi-circle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.bmi-circle {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 6px solid #dce8e5;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s ease;
+}
+.bmi-circle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bmi-label{
+    font-size: 11px;
+    color: #b8c2cc;
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+.bmi-circle .bmi-value {
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.bmi-circle.underweight { border-color: #3498db; }
+.bmi-circle.underweight .bmi-value { color: #2980b9; }
+
+.bmi-circle.normal { border-color: #2ecc71; }
+.bmi-circle.normal .bmi-value { color: #27ae60; }
+
+.bmi-circle.overweight { border-color: #e67e22; }
+.bmi-circle.overweight .bmi-value { color: #d35400; }
+
+.bmi-circle.obese { border-color: #e74c3c; }
+.bmi-circle.obese .bmi-value { color: #c0392b; }
+
+.bmi-status-wrapper {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.bmi-status-title {
+  font-weight: 700;
+  color: #355070 !important;
+  margin-bottom: 6px !important;
+}
+
+.bmi-status-desc {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #4b6475;
+}
+
+/* ==========================================================================
+   بخش منوی غذایی روزانه (کارت عریض تب‌ها)
+   ========================================================================== */
+
+.menu-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f0f2f5;
+  padding-bottom: 14px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.menu-header-wrapper h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #00a67e;
+}
+
+.menu-buttons-container {
+  display: flex;
+  background-color: #f1f3f5;
+  padding: 4px;
+  border-radius: 30px;
+}
+
+.menu-tab-btn {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 8px 22px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: bold;
+  color: #6c757d;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.menu-tab-btn.active {
+  background-color: #55b38a;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(85, 179, 138, 0.2);
+}
+
+.diet-tab-content {
+  display: none;
+  width: 100%;
+}
+
+.diet-tab-content.active-content {
+  display: block;
+  animation: fadeInMenu 0.4s ease forwards;
+}
+
+@keyframes fadeInMenu {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   ساختار سه باکس افقی (صبحانه، ناهار، شام)
+   ========================================================================== */
+
+.meals-horizontal-container {
+  display: flex;
+  flex-direction: row-reverse; /* چینش از راست به چپ فارسی: صبحانه راست، شام چپ */flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.meal-column-box {
+  flex: 1;
+  min-width: 0; /* جلوگیری از بهم ریختگی متن‌های طولانی */
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* عکس در وسط بالا قرار بگیرد */
+  background: #fbfbfb;
+  border: 1px solid #eef0f2;
+  border-radius: 18px;
+  padding: 22px 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.01);
+  transition: 0.2s;
+}
+
+.meal-column-box:hover {
+  transform: translateY(-3px);
+  background: #ffffff;
+  border-color: #55b38a;
+}
+
+/* استایل عکس دیفالت در بالای متن */
+.meal-column-box .meal-img-top {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.meal-column-box .meal-text {
+  width: 100%;
+  text-align: right;
+}
+
+/* استایل عنوان وعده‌ها زیر عکس */
+.meal-column-box .meal-text strong {
+  display: block;
+  color: #55b38a;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  border-bottom: 1px dashed #e2e8f0;
+  padding-bottom: 6px;
+}
+
+.meal-column-box .meal-text p {
+  margin: 0;
+  line-height: 2;
+  color: #4b6475;
+  font-size: 13.8px;
+}
+
+/* ================= FOOTER & RESPONSIVE ================= */
+footer {
+  margin-top: 80px;
+  padding: 28px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  color: #4b6475;
+}
+  
+@media(max-width:950px){
+  .hero-section { padding-top: 160px; }
+  .top-box { flex-direction: column; }
+  .top-image { width: 100%; max-width: 450px; height: 300px; }
+  .top-content { text-align: center; }
+  .top-content h1 { font-size: 2.2rem; }
+}
+  
+@media (max-width: 768px) {
+  .menu-header-wrapper { flex-direction: column; align-items: flex-start; gap: 15px; }
+  .menu-buttons-container { width: 100%; justify-content: space-between; }
+  .menu-tab-btn { flex: 1; text-align: center; padding: 8px 10px; }
+  .meals-horizontal-container { flex-direction: column; gap: 15px; }
+}
+
+@media(max-width:600px){
+  .diet-container { padding: 24px; }
+  .top-content h1 { font-size: 1.9rem; }
+  .top-content p { font-size: 0.95rem; }
+  .form-grid { grid-template-columns: 1fr; }
+  #result { grid-template-columns: 1fr; }
+}

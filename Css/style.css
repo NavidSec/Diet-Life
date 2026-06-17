@@ -1,0 +1,344 @@
+/* تعریف فونت پیش‌فرض و راست‌چین کردن کل صفحه */
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&family=Poppins:wght@600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+/* پس‌زمینه کل سایت طبق درخواست شما قرمز است */
+body {
+    /* background-color: #ff0000;  */
+    min-height: 100vh;
+}
+
+/* استایل هدر و منوی بالای صفحه */
+/*   */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: #f3f3f3;
+    height: 60px; /* ارتفاع ثابت برای کنترل دقیق فضا */
+}
+
+/* اصلاح باکس لوگو برای قرارگیری متن در سمت چپ عکس */
+.logo-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* تراز عمودی دقیق عکس و متن */
+    gap: 12px; /* ایجاد فاصله مناسب بین عکس لوگو و متن نام برند */
+}
+
+.logo-container .logo {
+    height: 50px;
+    display: block;
+    border-radius: 50%;
+}
+
+/* استایل اسم درشت سایت کنار لوگو */
+.brand-name {
+    font-family: 'Poppins', sans-serif; /* استفاده از فونت انگلیسی شیک */
+    font-size: 1.8rem; /* ابعاد درشت و واضح */
+    font-weight: 700; /* کاملا ضخیم و بولد */
+    color: #1a8758; /* رنگ سبز هماهنگ با تم سایت */
+    letter-spacing: 0.5px;
+}
+
+/* استایل منو و قرارگیری دقیق آن در وسط هدر */
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+.nav-menu ul li {
+    display: flex ;
+    align-items: center ;
+    height: 100% ;
+}
+
+.nav-menu ul li a {
+    text-decoration: none ;
+    color: #333 ;
+    font-weight: bold ;
+    font-size: 1.1rem ;
+    transition: color 0.3s ease ;
+    position: relative ; 
+    display: flex ;
+    align-items: center ;
+    height: 100% ; 
+    padding: 0 4px;
+}
+.nav-menu ul li a:hover,
+.nav-menu ul li a.active {
+    color:  #55b38a; /* تغییر رنگ متن به سبز برای جذابیت بیشتر */
+}
+
+.nav-menu ul li a::after {
+    content: ''; /* یک المان مجازی خالی ایجاد می‌کند */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* در حالت عادی عرض خط صفر است، پس دیده نمی‌شود */
+    background-color:  #55b38a;
+    height: 2px; /* ضخامت خط */
+    border-radius: 10px 10px 0 0; /* کمی گرد کردن لبه‌های خط */
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* انیمیشن حرکتی بسیار نرم */
+}
+
+/* وقتی موس روی لینک می‌رود (hover) یا لینک کلاس active دارد */
+.nav-menu ul li a:hover::after,
+.nav-menu ul li .active::after {
+    width: 100%; /* عرض خط از 0 به 100٪ می‌رسد و به آرامی باز می‌شود */
+}
+/* ایجاد فضای نامرئی هم‌اندازه با لوگو در سمت چپ برای هل دادن منو به وسط */
+.header-spacer {
+    flex: 1;
+}
+
+/* استایل بخش هیرو */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 30px); 
+    background-color: #ffffff; 
+    
+    background-image: url('../image/hero.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row-reverse; 
+}
+
+/* هدایت متن‌ها به سمت چپ تصویر */
+.hero-content {
+    max-width: 50%; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    text-align: right; 
+    padding-right: 130px;
+    padding-top: 100px;
+}
+
+.sub-title {
+    color: #55b38a;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.main-title {
+    font-size: 2.3rem;
+    color: #111111;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.main-title .highlight {
+    display: block;
+    color: #55b38a;
+}
+
+.description {
+    color: #555555;
+    font-size: 1rem;
+    line-height: 1.8;
+    padding-right: 40px;
+    margin-bottom: 35px;
+}
+
+/* دکمه‌ها */
+.cta-buttons {
+    display: flex;
+    gap: 50px;
+    padding-right: 70px;
+}
+
+.btn {
+    padding: 12px 35px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-black {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.btn-black:hover {
+    background-color: #222222;
+    transform: translateY(-2px);
+}
+
+.btn-green {
+    background-color: #55b38a;
+    color: #ffffff;
+}
+
+.btn-green:hover {
+    background-color: #439671;
+    transform: translateY(-2px);
+}
+
+/* ===== تبلت ===== */
+
+@media (max-width: 1500px){
+ .main-title {
+        font-size: 1.3rem;
+    }
+    .sub-title {
+    color: #55b38a;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+.btn {
+
+    font-size: 0.9rem;
+}
+}
+@media (max-width: 1100px) {
+
+
+    .hero-section {
+        height: auto;
+        min-height: 100svh;
+        background-position: 70% center;
+        padding: 100px 5% 50px;
+        align-items: flex-start;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        padding: 24px 20px;
+        padding-right: 20px;
+        background-color: rgba(255, 255, 255, 0.88);
+        border-radius: 14px;
+        align-items: flex-start;
+    }
+
+    .description {
+        padding-right: 0;
+    }
+
+    .cta-buttons {
+        padding-right: 0;
+        gap: 16px;
+    }
+
+   
+
+.main-title {
+    font-size: 1.3rem;
+    color: #111111;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+}
+
+/* ===== موبایل ===== */
+
+/* ===== موبایل ===== */
+/* ===== موبایل ===== */
+@media (max-width: 600px) {
+
+    .main-header {
+        padding: 12px 4%;
+        gap: 10px;
+    }
+
+    .brand-name {
+        font-size: 1.4rem;
+    }
+
+    .nav-menu ul {
+        gap: 10px;
+    }
+
+    .nav-menu ul li a {
+        font-size: 0.95rem;
+    }
+
+
+
+    .hero-section {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('../image/hero-mobile.png') !important;
+    
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .container {
+        flex-direction: column;
+        padding-top: 85px;
+    }
+
+
+    .hero-content {
+        padding: 20px 16px;
+        border-radius: 12px;
+    }
+
+    /* حذف کامل متن زیرعنوان در موبایل */
+    .sub-title {
+        display: none ;
+    }
+
+    .main-title {
+        font-size: 1.55rem;
+        line-height: 1.7;
+    }
+
+    .description {
+        font-size: 0.9rem;
+        padding-right: 0;
+        margin-bottom: 24px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 12px;
+        padding-right: 0;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+        padding: 13px 20px;
+        font-size: 1rem;
+    }
+}

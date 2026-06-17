@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght=600;700&family=Vazirmatn:wght=300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+header {
+    position: -webkit-sticky; /* سازگاری با مرورگرهای قدیمی‌تر سافاری */
+    position: sticky;
+    top: 0;                   /* چسبیدن به بالاترین نقطه صفحه */
+    z-index: 1000;            /* قرار گرفتن روی سایر المان‌های صفحه */
+    background-color: #ffffff; /* حتماً پس‌زمینه تعیین کنید تا محتوای زیر آن دیده نشود */
+}
+
+.main-header, .main-header * {
+    font-family: 'Vazirmatn', sans-serif,'Poppins';
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: #f3f3f3;
+    height: 60px; /* ارتفاع ثابت برای کنترل دقیق فضا */
+}
+
+/* اصلاح باکس لوگو برای قرارگیری متن در سمت چپ عکس */
+.logo-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* تراز عمودی دقیق عکس و متن */
+    gap: 12px; /* ایجاد فاصله مناسب بین عکس لوگو و متن نام برند */
+}
+
+.logo-container .logo {
+    height: 50px;
+    display: block;
+    border-radius: 50%;
+}
+
+/* استایل اسم درشت سایت کنار لوگو */
+.brand-name {
+    font-family: 'Poppins', sans-serif; /* استفاده از فونت انگلیسی شیک */
+    font-size: 1.8rem; /* ابعاد درشت و واضح */
+    font-weight: 700; /* کاملا ضخیم و بولد */
+    color: #1a8758; /* رنگ سبز هماهنگ با تم سایت */
+    letter-spacing: 0.5px;
+}
+
+/* استایل منو و قرارگیری دقیق آن در وسط هدر */
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-menu ul li {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    font-size: 1.2rem;
+    font-family: 'Vazirmatn';
+    transition: color 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 4px;
+}
+
+.nav-menu ul li a:hover,
+.nav-menu ul li a.active {
+    color: #55b38a; /* تغییر رنگ متن به سبز برای جذابیت بیشتر */
+}
+
+.nav-menu ul li a::after {
+    content: ''; /* یک المان مجازی خالی ایجاد می‌کند */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* در حالت عادی عرض خط صفر است، پس دیده نمی‌شود */
+    background-color: #55b38a;
+    height: 3px; /* ضخامت خط */
+    border-radius: 10px 10px 0 0; /* کمی گرد کردن لبه‌های خط */
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* انیمیشن حرکتی بسیار نرم */
+}
+
+/* حل باگ قفل شدن دسکتاپ: خط زیرین با فرمول استاندارد برای هاور و کلاس active صفحات دیگر باز می‌شود */
+.nav-menu ul li a:hover::after,
+.nav-menu ul li a.active::after {
+    width: 100%; /* عرض خط از 0 به 100٪ می‌رسد و به آرامی باز می‌شود */
+}
+
+/* ایجاد فضای نامرئی هم‌اندازه با لوگو در سمت چپ برای هل دادن منو به وسط */
+.header-spacer {
+    flex: 1;
+}
+
+/* مخفی کردن دکمه همبرگری در دسکتاپ */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.menu-title {
+    display: none;
+}
+
+/* ==========================================================================
+   ریسبانسیو کردن هدر با حفظ دکمه همبرگری در هدر و دکمه بستن در باکس منو (بدون هیچ تغییری در ساختار شما)
+   ========================================================================== */
+/* ==========================================================================
+   ریسبانسیو کردن هدر با حفظ دکمه همبرگری در هدر و دکمه بستن در باکس منو (بدون هیچ تغییری در ساختار شما)
+   ========================================================================== */
+@media (max-width: 1400px) {
+    /* تنظیم تگ اصلی هدر برای چسبیدن و کدر ماندن کامل */
+    header {
+        position: -webkit-sticky !important;
+        position: sticky !important;
+        top: 0 !important;
+        left: 0;
+        width: 100%;
+        z-index: 1000 !important;
+        background-color: #f3f3f3 !important; /* حفظ رنگ اصلی و کدر هدر */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* سایه ملایم برای تفکیک موقع اسکرول */
+    }
+
+    /* ۱. تنظیمات بدنه اصلی هدر در موبایل */
+    .main-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 5%;
+        height: 70px;
+        position: relative;
+        background-color: #f3f3f3 !important; /* هم‌رنگ و یکپارچه با والد */
+    }
+
+    /* ۲. بهینه‌سازی سایز لوگو و نام برند */
+    .logo-container {
+        flex: unset;
+    }
+
+    .logo-container .logo {
+        height: 40px;
+    }
+
+    .brand-name {
+        font-size: 1.4rem;
+    }
+
+    /* ۳. حذف اسپیسر دسکتاپ */
+    .header-spacer {
+        display: none;
+    }
+
+    /* ۴. دکمه همبرگری اصلی هدر (ثابت در جای اصلی خود روی هدر) */
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 6px; 
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .hamburger-menu span {
+        display: block;
+        width: 26px; 
+        height: 3px; 
+        background-color: #1a8758; 
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    /* ۵. تبدیل منو به یک باکس شناور شیک و جمع‌وجور به اندازه محتوا */
+    .nav-menu {
+        position: fixed;
+        top: 20px; 
+        left: 20px; 
+        width: 300px; 
+        height: auto; 
+        background: linear-gradient(145deg, #ffffff, #f4faf6); 
+        box-shadow: 0 10px 30px rgba(26, 135, 88, 0.18); 
+        border-radius: 20px; 
+        border: 1.5px solid #d1eedf; 
+        
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        z-index: 1002; 
+
+        /* انیمیشن باز شدن کارت */
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0.95);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav-menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
+
+    /* ۶. استایل کلمه انگلیسی Menu به عنوان تایتل مستقل بخش */
+    .menu-title {
+        display: block; 
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #1a8758;
+        padding: 24px 24px 15px 24px; 
+        margin-bottom: 25px; 
+        width: 100%;
+        text-align: left; 
+        letter-spacing: 1px;
+        position: relative; 
+        box-sizing: border-box;
+    }
+
+    /* خط سبز کوچک زیر کلمه Menu */
+    .menu-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0; 
+        left: 24px; 
+        width: 80px; 
+        height: 3px;
+        background-color: #55b38a;
+        border-radius: 2px;
+    }
+
+    /* ۷. دکمه ضربدر مستقل منحصراً در فضای خالی سمت راستِ داخل باکس منو */
+    .close-menu {
+        display: flex;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 28px; 
+        right: 24px; 
+        cursor: pointer;
+        z-index: 1003;
+    }
+
+    /* ساخت دو خط متقاطع برای ایجاد علامت ضربدر (X) */
+    .close-menu span {
+        position: absolute;
+        width: 24px;
+        height: 3px;
+        background-color: #55b38a; 
+        border-radius: 2px;
+    }
+
+    .close-menu span:nth-child(1) {
+        transform: rotate(45deg);
+        top: 10px;
+    }
+
+    .close-menu span:nth-child(2) {
+        transform: rotate(-45deg);
+        top: 10px;
+    }
+
+    /* ۸. تنظیمات باکس لیست دکمه‌ها */
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 14px; 
+        padding: 0 24px 24px 24px; 
+    }
+
+    .nav-menu ul li {
+        width: 100%;
+    }
+
+    /* ۹. کادربندی و رنگ‌بندی عناوین منو در حالت عادی */
+    .nav-menu ul li a {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #1a8758; 
+        background-color: #f0f9f4; 
+        border: 1.5px solid #d1eedf; 
+        border-radius: 12px; 
+        text-decoration: none;
+        box-sizing: border-box;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    /* ساختار متمایز کلاس اکتیو روی صفحه مورد نظر در موبایل */
+    .nav-menu ul li a.active {
+        color: #1a8758;
+        background-color: #ffffff;
+        border-color: #1a8758;
+        box-shadow: 0 4px 12px rgba(26, 135, 88, 0.12);
+    }
+
+    /* افکت هاور برای تمام دکمه‌ها در موبایل */
+    .nav-menu ul li a:hover {
+        color: #1a8758;
+        background-color: #ffffff;
+        border-color: #1a8758;
+        box-shadow: 0 4px 12px rgba(26, 135, 88, 0.12);
+        transform: translateX(5px);
+    }
+
+    /* غیرفعال کردن خط زیرین دساپ در موبایل */
+    .nav-menu ul li a::after {
+        display: none !important;
+    }
+
+    /* ۱۰. حذف کامل انیمیشن‌های ضربدر قدیمی از روی دکمه هدر */
+    .hamburger-menu.active span {
+        width: 26px; 
+        transform: none;
+        opacity: 1;
+    }
+}
+
+/* ==========================================================================
+   بهینه‌سازی نهایی باکس شناور برای گوشی‌های خیلی کوچک (زیر 500 پیکسل)
+   ========================================================================== */
+@media (max-width: 500px) {
+    header {
+        background-color: #f3f3f3 !important;
+    }
+
+    .main-header {
+        height: 60px;
+        padding: 10px 4%;
+        background-color: #f3f3f3 !important;
+    }
+
+    .logo-container .logo {
+        height: 32px;
+    }
+
+    .brand-name {
+        font-size: 1.15rem;
+    }
+
+    /* تنظیم دکمه همبرگری هدر در ابعاد کوچک */
+    .hamburger-menu {
+        gap: 5px;
+    }
+
+    .hamburger-menu span {
+        width: 24px;
+        height: 2.5px;
+    }
+
+    /* تنظیمات کارت منو در ابعاد موبایل */
+    .nav-menu {
+        width: 260px; 
+        top: 15px;
+        left: 15px;
+    }
+
+    .menu-title {
+        font-size: 1.3rem;
+        padding: 18px 18px 8px 18px;
+        margin-bottom: 15px;
+    }
+
+    .menu-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0; 
+        left: 18px; 
+        width: 62px; 
+        height: 3px;
+        background-color: #55b38a;
+        border-radius: 2px;
+    }
+
+    /* تنظیم تراز ضربدر داخل باکس در ابعاد موبایل */
+    .close-menu {
+        top: 20px;
+        right: 18px;
+    }
+
+    .nav-menu ul {
+        gap: 10px;
+        padding: 0 18px 18px 18px;
+    }
+
+    .nav-menu ul li a {
+        padding: 11px 16px;
+        font-size: 0.95rem;
+        border-radius: 10px;
+    }
+    
+    /* هماهنگ‌سازی دکمه اکتیو در رزولوشن زیر ۵۰۰ پیکسل */
+    .nav-menu ul li a.active {
+        background-color: #ffffff;
+        border-color: #1a8758;
+    }
+}

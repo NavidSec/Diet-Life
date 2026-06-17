@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>Dietalife | دایتا لایف</title>
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="Css/header.css">
+</head>
+<body>
+<header class="main-header">
+    <div class="logo-container">
+        <img src="image/logo.png" alt="لوگو رژیم آنلاین" class="logo">
+        <span class="brand-name">Dietalife</span>
+    </div>
+    
+    <div class="hamburger-menu" id="hamburger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav class="nav-menu" id="nav-menu">
+        
+        <div class="close-menu" id="close-btn">
+            <span></span>
+            <span></span>
+        </div>
+        
+        <h3 class="menu-title">Menu</h3>
+        
+        <ul>
+            <li><a href="index.html" class="active">صفحه اصلی</a></li>
+            <li><a href="bmi.html">محاسبه BMI</a></li>
+            <li><a href="diet.html">تولید رژیم و ارزیابی</a></li>
+            <li><a href="medical-encyclopedia.html">دانشنامه پزشکی</a></li>
+            <li><a href="medical-emergencies.html">فوریت های پزشکی</a></li>
+        </ul>
+    </nav>
+
+    <div class="header-spacer"></div>
+</header>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <span class="sub-title">یک رژیم تکراری برای همه کارساز نیست؛ سبک زندگی خودت را بساز!</span>
+                <h1 class="main-title">
+                    <span class="highlight">رژیم غذایی هوشمند</span>
+                     متناسب با پروفایل سلامت شما
+                </h1>
+                <p class="description">
+                    با وارد کردن سن, قد و وزن، شاخص توده بدنی (BMI) شما را  محاسبه می‌کنیم. 
+                    سپس با توجه به جنسیت و وضعیت سلامتتان در برابر قند، فشار یا چربی خون، 
+                    برنامه غذایی متنوع و علمی متمایز به شما پیشنهاد می‌دهیم.
+                </p>
+                <div class="cta-buttons">
+                    <button id="btn-diet" class="btn btn-black">دریافت رژیم</button>
+                    <button id="btn-bmi" class="btn btn-green">محاسبه BMI</button>
+                </div>
+            </div>
+        </div>
+    </section>
+<script>
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const navMenu = document.getElementById('nav-menu');
+
+    // ۱. باز کردن منو با کلیک روی دکمه همبرگری هدر
+    hamburgerBtn.addEventListener('click', () => {
+        navMenu.classList.add('active');
+    });
+
+    // ۲. بستن منو با کلیک روی دکمه ضربدرِ داخل خود باکس
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
+    }
+
+    // ۳. بستن منو در صورت کلیک روی لینک‌ها
+    document.querySelectorAll('.nav-menu ul li a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
+    });
+
+    // ۴. آپشنال: بستن منو در صورت کلیک روی فضای خالی بیرونِ باکس منو (برای تجربه کاربری بهتر)
+    document.addEventListener('click', (event) => {
+        if (!navMenu.contains(event.target) && !hamburgerBtn.contains(event.target)) {
+            navMenu.classList.remove('active');
+        }
+    });
+</script>
+    
+    <script src="Js/bmi.js"></script>
+    <script src="Js/diet-engine.js"></script>
+</body>
+</html>
